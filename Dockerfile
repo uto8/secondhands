@@ -12,7 +12,7 @@ ENV APP_HOME /secondhands
 RUN mkdir -p $APP_HOME
 WORKDIR $APP_HOME
 ADD . $APP_HOME
-RUN yarn install --check-files
+RUN yarn install --ignore-engines
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
