@@ -37,6 +37,9 @@ class PostsController < ApplicationController
       redirect_back(fallback_location: root_path)
     end
   end
+  def buy
+    # @buy =
+  end
   private
   def post_params
     params.require(:post).permit(:title, :description, :price)

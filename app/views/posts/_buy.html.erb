@@ -1,0 +1,3 @@
+<%= form_with(model: @buy,url: buys_path, local: true) do |f| %>
+    <%= f.submit "Buy", disable_with: 'Submiting...',class:"btn btn-success" %>
+<%end%>
