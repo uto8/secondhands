@@ -1,4 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
+    <div class="container">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -6,12 +7,17 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
         <% if current_user %>
+            <li class="nav-item">
+                <%= link_to "Post", new_post_path,class:"nav-link btn btn-primary" %>
+            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
                 name
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <%= link_to "Posts List",posts_path,class:"dropdown-item" %>
                     <%= link_to "Edit",edit_user_registration_path,class:"dropdown-item" %>
+                    <hr>
                     <%= link_to "Sign Out", destroy_user_session_path, method: :delete,class:"dropdown-item" %>
                 </div>
             </li>
@@ -24,5 +30,6 @@
             </li>
         <% end %>
     </ul>
+  </div>
   </div>
 </nav>
