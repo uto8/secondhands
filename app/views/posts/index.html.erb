@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10 row">
+        <% @posts.each do |post| %>
+            <div class="col-4">
+                <div class="card" style="margin-bottom:20px">
+                    <% if post.images.present? %>
+                        <% post.images.each do |image| %>
+                            <%= image_tag image, class:"w-100 h-50" %>
+                        <% end %>
+                    <%else%>
+                        <%= image_tag "empty.jpg", class:"h-50" %>
+                    <%end%>
+                    <div class="card-body">
+                        <h5 class="card-title"><%= post.title %></h5>
+                        <p class="card-text"><%= post.description %></p>
+                        <%= post.price %>
+                        <%= link_to "Show Page", post_path(post), class:"btn btn-primary btn-block" %>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+    <div class="col-1"></div>
+</div>

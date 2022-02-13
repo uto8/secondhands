@@ -53,3 +53,9 @@ production:
   database: secondhands_production
   username: secondhands
   password: <%= ENV['SECONDHANDS_DATABASE_PASSWORD'] %>
+
+production:
+    <<: *default
+    adapter: postgresql
+    encoding: unicode
+    pool: 5
