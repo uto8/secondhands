@@ -4,7 +4,13 @@
         <% @posts.each do |post| %>
             <div class="col-4">
                 <div class="card" style="margin-bottom:20px">
-                    <img src="..." class="card-img-top" alt="...">
+                    <% if post.images.present? %>
+                        <% post.images.each do |image| %>
+                            <%= image_tag image, class:"w-100 h-50" %>
+                        <% end %>
+                    <%else%>
+                        <%= image_tag "empty.jpg", class:"h-50" %>
+                    <%end%>
                     <div class="card-body">
                         <h5 class="card-title"><%= post.title %></h5>
                         <p class="card-text"><%= post.description %></p>

@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <table class="table mt-4">
+            <tbody>
+                <tr>
+                    <th scope="row">Name</th>
+                    <td><%= @buy.post.title %></td>
+                </tr>
+                <tr>
+                    <th scope="row">Description</th>
+                    <td><%= @buy.post.description %></td>
+                </tr>
+                <tr>
+                    <th scope="row">Price</th>
+                    <td><%= @buy.post.price %></td>
+                </tr>
+                <tr>
+                    <th scope="row">投稿者</th>
+                    <td><%= @buy.user.email %></td>
+                </tr>
+                <tr>
+                    <th scope="row">商品タイプ</th>
+                    <td><%= @buy.post.item_type %><td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-3"></div>
+</div>

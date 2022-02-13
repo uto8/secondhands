@@ -9,6 +9,7 @@ class PostsController < ApplicationController
       redirect_to post_path(@post)
     else
       render "new"
+      flash[:danger]="Successfully post"
     end
   end
   def destroy
@@ -42,6 +43,6 @@ class PostsController < ApplicationController
   end
   private
   def post_params
-    params.require(:post).permit(:title, :description, :price)
+    params.require(:post).permit(:title, :description, :price, :item_type, images: [])
   end
 end

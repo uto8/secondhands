@@ -3,6 +3,10 @@
     <div class="col-6">
         <%= form_for(@post, url:{controller:'posts', action: 'update',id:@post.id}) do |f| %>
             <div class="form-group">
+                <%= f.label :images %>
+                <%= f.file_field :images, direct_upload: true, multiple: true %>
+            </div>
+            <div class="form-group">
                 <%= f.label :title, "Title" %>
                 <%= f.text_field :title, class:"form-control" %>
             </div>
@@ -13,6 +17,10 @@
             <div class="form-group">
                 <%= f.label :price, "Price" %>
                 <%= f.number_field :price, class:"form-control" %>
+            </div>
+            <div class="form-group">
+                <%= f.label :item_type, "Item type" %>
+                <%= f.select :item_type, {'レンタル': "rental", '販売': "buy"}, { include_blank: '選択してください' }, { class: "custom-select mr-sm-2", required: true }%>   
             </div>
             <%= f.submit "Submit", class:"btn btn-success btn-block" %>
         <% end %>
